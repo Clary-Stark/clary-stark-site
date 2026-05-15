@@ -1,0 +1,21 @@
+{
+  "title": "BOB",
+  "status": "développement",
+  "tagline": "L'assistant vocal familial multifonction",
+  "short_description": "Bientôt disponible : BOB, l'assistant vocal multifonction pour toute la famille. Plannings, rappels médicaux, contrôle parental, géolocalisation et bien plus encore.",
+  "description": "BOB est un assistant vocal familial conçu pour tourner 24h/24 sur une tablette ou un PC fixe. Profils admin, enfant et senior. Interface colorée et familiale.",
+  "prix": "",
+  "image_principale": "",
+  "image_mockup": "",
+  "page_active": false,
+  "specs": [],
+  "features": [
+    { "icon": "🎙️", "titre": "Commande vocale", "description": "Interface mains libres style Siri / Alexa, toujours disponible." },
+    { "icon": "📅", "titre": "Plannings familiaux", "description": "Gérez les agendas de toute la famille depuis un seul endroit." },
+    { "icon": "💊", "titre": "Rappels médicaments", "description": "Alertes personnalisées pour ne jamais oublier un traitement." },
+    { "icon": "👨‍👩‍👧", "titre": "Profils multi-utilisateurs", "description": "Profils admin, enfant et senior avec interfaces adaptées." },
+    { "icon": "📍", "titre": "Géolocalisation", "description": "Suivez la localisation des membres de la famille en temps réel." },
+    { "icon": "🛒", "titre": "Listes de courses", "description": "Dictez vos courses à la voix, partagées avec toute la famille." }
+  ],
+  "includes": []
+}

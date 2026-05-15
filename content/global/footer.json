@@ -1,0 +1,10 @@
+{
+  "copyright": "2026 Clary Stark - EI Battagliola Gregory",
+  "footer_links": [
+    {"label": "Mentions legales",   "action": "legales-mentions"},
+    {"label": "CGU",                "action": "legales-cgu"},
+    {"label": "Confidentialite",    "action": "legales-confidentialite"},
+    {"label": "Manuel",             "action": "legales-manuel"},
+    {"label": "Contact",            "action": "contact"}
+  ]
+}

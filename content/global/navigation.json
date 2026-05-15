@@ -1,0 +1,10 @@
+{
+  "nav_links": [
+    {"label": "Nouveautes", "page": "nouveautes", "visible": true},
+    {"label": "Memoire",    "page": "memoire",    "visible": true},
+    {"label": "A propos",   "page": "apropos",    "visible": true},
+    {"label": "Contact",    "page": "contact",    "visible": true}
+  ],
+  "nav_cta_label": "Nous contacter",
+  "nav_cta_page": "contact"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Mémoire",
+  "status": "disponible",
+  "tagline": "Votre héritage, protégé pour toujours",
+  "short_description": "La solution de stockage numérique sécurisée pour préserver et transmettre votre héritage à vos proches. Chiffrement AES-256, SSD 256 Go inclus.",
+  "description": "Mémoire est un coffre-fort numérique livré sur disque dur externe premium. Il permet de centraliser et transmettre en toute sécurité tout ce qui compte : photos, vidéos, messages pour les proches, testament, codes d'accès, informations bancaires, médicales et bien plus encore.\n\nConçu pour être utilisé par tous, sans aucune compétence technique.",
+  "prix": "",
+  "image_principale": "/static/images/memoire-colombe.png",
+  "image_mockup": "/static/images/memoire-mockup.png",
+  "page_active": true,
+  "specs": [
+    { "label": "Stockage", "value": "256 Go SSD SSK SD451" },
+    { "label": "Interface", "value": "USB 3.2 Gen2 (USB-C)" },
+    { "label": "Vitesse lecture", "value": "560 Mo/s" },
+    { "label": "Chiffrement", "value": "AES-256 bits" },
+    { "label": "Compatibilité", "value": "Windows · macOS · Android · iOS" },
+    { "label": "Dimensions SSD", "value": "67,6 x 67,3 x 9,9 mm" }
+  ],
+  "features": [
+    { "icon": "📷", "titre": "Photos & Vidéos", "description": "Stockez vos souvenirs les plus précieux. Albums photos, vidéos de famille, moments inoubliables conservés pour l'éternité." },
+    { "icon": "✉️", "titre": "Messages personnels", "description": "Laissez des lettres, des mots d'amour ou des vidéos à ceux que vous aimez. Des messages qui survivront au temps." },
+    { "icon": "📜", "titre": "Testament & Documents", "description": "Importez vos documents officiels en toute sécurité. Testament, actes notariés, contrats d'assurance." },
+    { "icon": "🔐", "titre": "Informations confidentielles", "description": "Codes d'accès, comptes en ligne, coordonnées bancaires, assurances — accessibles uniquement aux personnes désignées." },
+    { "icon": "📖", "titre": "Biographie", "description": "Racontez votre histoire, vos souvenirs, votre parcours de vie. Une mémoire vivante pour les générations futures." },
+    { "icon": "🏥", "titre": "Carnet médical", "description": "Médecin traitant, groupe sanguin, traitements en cours, mutuelle — toutes les informations vitales en cas d'urgence." }
+  ],
+  "includes": [
+    "SSD externe SSK SD451 — 256 Go préconfigué",
+    "Logiciel Mémoire préinstallé & activé",
+    "Coffret magnétique premium noir & or",
+    "Câble USB-C vers USB-C inclus",
+    "Guide d'utilisation illustré",
+    "Assistance téléphonique Clarisys Lorraine",
+    "Mises à jour gratuites à vie"
+  ]
+}

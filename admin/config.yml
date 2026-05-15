@@ -1,0 +1,235 @@
+backend:
+  name: github
+  repo: Clary-Stark/clary-stark-site
+  branch: main
+  auth_scope: repo
+
+media_folder: "static/images"
+public_folder: "/static/images"
+
+collections:
+
+  # ══════════════════════════════════════
+  # 1. PAGE D'ACCUEIL
+  # ══════════════════════════════════════
+  - name: "accueil"
+    label: "Page d'accueil"
+    files:
+      - label: "Contenu page d'accueil"
+        name: "accueil"
+        file: "content/pages/accueil.json"
+        fields:
+          - {label: "Eyebrow (petit texte au-dessus du titre)", name: "hero_eyebrow", widget: "string", default: "Solutions numeriques innovantes"}
+          - {label: "Titre hero", name: "hero_title", widget: "string", default: "CLARY STARK"}
+          - {label: "Sous-titre hero", name: "hero_subtitle", widget: "string"}
+          - {label: "Bouton CTA - texte", name: "hero_cta_label", widget: "string", default: "Decouvrir nos solutions"}
+          - {label: "Bouton CTA - page cible", name: "hero_cta_link", widget: "select", options: ["memoire", "bob", "nouveautes", "apropos", "contact"]}
+          - label: "Piliers (4 valeurs en bas du hero)"
+            name: "pillars"
+            widget: "list"
+            min: 4
+            max: 4
+            fields:
+              - {label: "Icone emoji", name: "icon", widget: "string"}
+              - {label: "Texte", name: "text", widget: "string"}
+          - {label: "Titre section produits", name: "products_title", widget: "string", default: "Des logiciels qui font la difference"}
+
+  # ══════════════════════════════════════
+  # 2. PRODUITS
+  # ══════════════════════════════════════
+  - name: "products"
+    label: "Produits"
+    label_singular: "Produit"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{status}}"
+    fields:
+      - {label: "Nom du produit", name: "title", widget: "string"}
+      - label: "Statut"
+        name: "status"
+        widget: "select"
+        options:
+          - {label: "Disponible", value: "disponible"}
+          - {label: "Bientot", value: "bientot"}
+          - {label: "En developpement", value: "developpement"}
+        default: "disponible"
+      - {label: "Page dediee activee (visible dans le menu)", name: "page_active", widget: "boolean", default: false}
+      - {label: "Slogan court", name: "tagline", widget: "string"}
+      - {label: "Description courte (carte accueil)", name: "short_description", widget: "text"}
+      - {label: "Description longue (page produit)", name: "description", widget: "markdown"}
+      - {label: "Prix (en chiffres, ex: 149)", name: "prix", widget: "string", required: false}
+      - {label: "Note sous le prix", name: "prix_note", widget: "string", default: "paiement unique livraison incluse", required: false}
+      - {label: "Image principale (icone carte)", name: "image_principale", widget: "image", required: false}
+      - {label: "Image mockup / coffret", name: "image_mockup", widget: "image", required: false}
+      - label: "Theme couleur"
+        name: "theme"
+        widget: "select"
+        options:
+          - {label: "Or Noir Ivoire (Memoire)", value: "gold"}
+          - {label: "Cyan Bleu nuit (defaut)", value: "cyan"}
+        default: "gold"
+      - label: "Specifications techniques"
+        name: "specs"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Libelle", name: "label", widget: "string"}
+          - {label: "Valeur", name: "value", widget: "string"}
+      - label: "Fonctionnalites"
+        name: "features"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Icone emoji", name: "icon", widget: "string"}
+          - {label: "Titre", name: "titre", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+      - label: "Badges securite"
+        name: "badges"
+        widget: "list"
+        required: false
+        field: {label: "Badge", name: "item", widget: "string"}
+      - label: "Contenu du pack (liste commande)"
+        name: "includes"
+        widget: "list"
+        required: false
+        field: {label: "Element", name: "item", widget: "string"}
+      - {label: "Email de commande", name: "order_email", widget: "string", default: "contact@clary-stark.com", required: false}
+      - {label: "Texte bouton commander", name: "order_cta", widget: "string", default: "Contacter pour commander", required: false}
+
+  # ══════════════════════════════════════
+  # 3. ACTUALITES
+  # ══════════════════════════════════════
+  - name: "nouveautes"
+    label: "Actualites"
+    label_singular: "Actualite"
+    folder: "content/nouveautes"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date affichee (ex: Mai 2026)", name: "date", widget: "string"}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+      - label: "Categorie"
+        name: "tag"
+        widget: "select"
+        required: false
+        options:
+          - {label: "Lancement", value: "lancement"}
+          - {label: "Mise a jour", value: "maj"}
+          - {label: "En developpement", value: "dev"}
+          - {label: "Partenariat", value: "partenariat"}
+
+  # ══════════════════════════════════════
+  # 4. A PROPOS
+  # ══════════════════════════════════════
+  - name: "apropos"
+    label: "A propos"
+    files:
+      - label: "Page A propos"
+        name: "apropos"
+        file: "content/pages/apropos.json"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Contenu", name: "body", widget: "markdown"}
+
+  # ══════════════════════════════════════
+  # 5. CONTACT ET ENTREPRISE
+  # ══════════════════════════════════════
+  - name: "contact"
+    label: "Contact et Entreprise"
+    files:
+      - label: "Informations de contact"
+        name: "contact"
+        file: "content/pages/contact.json"
+        fields:
+          - {label: "Email principal", name: "email", widget: "string", default: "contact@clary-stark.com"}
+          - {label: "Telephone", name: "phone", widget: "string", default: "(+33) 06-89-62-62-48"}
+          - {label: "Adresse ligne 1", name: "adresse1", widget: "string", default: "1 Rue Rougeleck"}
+          - {label: "Adresse ligne 2", name: "adresse2", widget: "string", default: "54650 Saulnes, France"}
+          - {label: "Site Clarisys Lorraine", name: "site_clarisys", widget: "string", default: "https://www.clarisys-lorraine.com"}
+          - {label: "Nom legal", name: "nom_legal", widget: "string", default: "EI Battagliola Gregory"}
+          - {label: "SIRET", name: "siret", widget: "string", required: false}
+          - {label: "Numero TVA", name: "tva", widget: "string", required: false}
+
+  # ══════════════════════════════════════
+  # 6. PAGES LEGALES
+  # ══════════════════════════════════════
+  - name: "legales"
+    label: "Pages legales"
+    files:
+      - label: "Mentions legales"
+        name: "mentions"
+        file: "content/legales/mentions.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string", default: "Mentions legales"}
+          - {label: "Contenu", name: "body", widget: "markdown"}
+
+      - label: "CGU"
+        name: "cgu"
+        file: "content/legales/cgu.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string", default: "Conditions Generales d Utilisation"}
+          - {label: "Contenu", name: "body", widget: "markdown"}
+
+      - label: "Politique de confidentialite"
+        name: "confidentialite"
+        file: "content/legales/confidentialite.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Contenu", name: "body", widget: "markdown"}
+
+      - label: "Manuel utilisateur Memoire"
+        name: "manuel"
+        file: "content/legales/manuel.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string", default: "Manuel utilisateur Memoire"}
+          - {label: "Introduction", name: "intro", widget: "text"}
+          - label: "Etapes"
+            name: "steps"
+            widget: "list"
+            fields:
+              - {label: "Numero ou symbole", name: "num", widget: "string"}
+              - {label: "Titre etape", name: "title", widget: "string"}
+              - {label: "Description", name: "body", widget: "text"}
+
+  # ══════════════════════════════════════
+  # 7. PARAMETRES GLOBAUX
+  # ══════════════════════════════════════
+  - name: "global"
+    label: "Parametres globaux"
+    files:
+      - label: "Navigation (menu)"
+        name: "navigation"
+        file: "content/global/navigation.json"
+        fields:
+          - label: "Liens du menu"
+            name: "nav_links"
+            widget: "list"
+            fields:
+              - {label: "Libelle", name: "label", widget: "string"}
+              - {label: "Page cible", name: "page", widget: "string"}
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+          - {label: "Texte bouton CTA nav", name: "nav_cta_label", widget: "string", default: "Nous contacter"}
+          - {label: "Page cible CTA nav", name: "nav_cta_page", widget: "string", default: "contact"}
+
+      - label: "Footer"
+        name: "footer"
+        file: "content/global/footer.json"
+        fields:
+          - {label: "Texte copyright", name: "copyright", widget: "string", default: "2026 Clary Stark EI Battagliola Gregory"}
+          - label: "Liens footer"
+            name: "footer_links"
+            widget: "list"
+            fields:
+              - {label: "Libelle", name: "label", widget: "string"}
+              - {label: "Action", name: "action", widget: "string"}
+
+      - label: "SEO et metadonnees"
+        name: "seo"
+        file: "content/global/seo.json"
+        fields:
+          - {label: "Titre du site (onglet navigateur)", name: "site_title", widget: "string", default: "Clary Stark Solutions Numeriques Innovantes"}
+          - {label: "Description Google (160 caracteres max)", name: "meta_description", widget: "text"}
+          - {label: "Image partage reseaux sociaux", name: "og_image", widget: "image", required: false}
